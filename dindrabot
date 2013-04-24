@@ -1,0 +1,8 @@
+#!/bin/bash
+# Every time we start up, update ourselves first
+while true; do
+    git pull --ff-only
+    python run.py $*
+done
+
+
