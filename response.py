@@ -83,4 +83,4 @@ class SimpleResponse:
     def help(self):
         mergedlist = self.built_ins + self.commands.keys()
 
-        return "Possible commands: !%s" % (", !".join(mergedlist.sort()))
+        return "Possible commands: !%s" % (", !".join(sorted(mergedlist)))
