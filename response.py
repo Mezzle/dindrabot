@@ -30,7 +30,7 @@ class SimpleResponse:
         split_command = [command.partition(" ")[0], command.partition(" ")[2]]
 
         if split_command[0] == 'help':
-            return self.commands()
+            return self.help()
 
         if split_command[0] in self.built_ins:
             if not is_mod:
@@ -80,7 +80,7 @@ class SimpleResponse:
             fp.write(json.dumps(self.commands))
         fp.close()
 
-    def commands(self):
+    def help(self):
         mergedlist = self.builtins + self.commands.keys()
 
         return "Possible commands: !%s" % (", !".join(mergedlist))
