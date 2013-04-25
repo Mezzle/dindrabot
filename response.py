@@ -29,7 +29,7 @@ class SimpleResponse:
 
         split_command = [command.partition(" ")[0], command.partition(" ")[2]]
 
-        if split_command[0] == 'help'
+        if split_command[0] == 'help':
             return self.commands()
 
         if split_command[0] in self.built_ins:
