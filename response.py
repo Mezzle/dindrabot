@@ -81,6 +81,6 @@ class SimpleResponse:
         fp.close()
 
     def help(self):
-        mergedlist = self.builtins + self.commands.keys()
+        mergedlist = self.built_ins + self.commands.keys()
 
         return "Possible commands: !%s" % (", !".join(mergedlist))
