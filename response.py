@@ -78,7 +78,7 @@ class SimpleResponse:
             fp.write(json.write(self.commands))
         else:
             fp.write(json.dumps(self.commands))
-        fp.close()dsd
+        fp.close()
 
     def commands(self):
         mergedlist = self.builtins + self.commands.keys()
