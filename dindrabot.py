@@ -22,8 +22,6 @@ class DindraBot(SingleServerIRCBot):
 
         SingleServerIRCBot.__init__(self, [(server, port, self.password)], nickname, nickname)
 
-
-
     def on_nicknameinuse(self, c, e):
         c.nick(c.get_nickname() + "_")
 
@@ -38,7 +36,7 @@ class DindraBot(SingleServerIRCBot):
     def on_pubmsg(self, c, e):
         speaker = nm_to_n(e.source())
         channel = e.target()
-        spoken = e.arguments()[0].lower()
+        spoken = e.arguments()[0]
         if channel != self.channel: return
         melower = c.get_nickname().lower()
         if not spoken.startswith("!"):
