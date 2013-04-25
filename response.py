@@ -5,7 +5,7 @@ class SimpleResponse:
     commands = {}
     filename = ''
 
-    built_ins = ['add', 'delete', 'modify']
+    built_ins = ['add', 'delete', 'modify', 'help']
 
     def __init__(self):
         self.filename = os.path.join(os.path.split(__file__)[0], "responses.json")
@@ -28,6 +28,9 @@ class SimpleResponse:
     def get_response(self, command, speaker, is_mod):
 
         split_command = [command.partition(" ")[0], command.partition(" ")[2]]
+
+        if split_command[0] == 'help'
+            return self.commands()
 
         if split_command[0] in self.built_ins:
             if not is_mod:
@@ -75,4 +78,9 @@ class SimpleResponse:
             fp.write(json.write(self.commands))
         else:
             fp.write(json.dumps(self.commands))
-        fp.close()
+        fp.close()dsd
+
+    def commands(self):
+        mergedlist = self.builtins + self.commands.keys()
+
+        return "Possible commands: !%s" % (", !".join(mergedlist))
