@@ -77,8 +77,14 @@ class SimpleResponse:
         if '%s%s' % (sys.version_info[0], sys.version_info[1]) == '25':
             fp.write(json.write(self.commands))
         else:
-            fp.write(json.dumps(self.commands, sort_keys=True,
-...                  indent=4, separators=(',', ': ')))
+            fp.write(
+                json.dumps(
+                    self.commands,
+                    sort_keys=True,
+                    indent=4,
+                    separators=(',', ': ')
+                )
+            )
         fp.close()
 
     def help(self):
