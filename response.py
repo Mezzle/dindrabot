@@ -18,7 +18,7 @@ class SimpleResponse:
 
     def has_response(self, command):
 
-        split_command = [command.partition(" ")[0], command.partition(" ")[2]]
+        split_command = [command.partition(" ")[0].lower(), command.partition(" ")[2]]
 
         if split_command[0] in self.built_ins or split_command[0] in self.commands:
             return True
@@ -27,7 +27,7 @@ class SimpleResponse:
 
     def get_response(self, command, speaker, is_mod):
 
-        split_command = [command.partition(" ")[0], command.partition(" ")[2]]
+        split_command = [command.partition(" ")[0].lower(), command.partition(" ")[2]]
 
         if split_command[0] == 'help':
             return self.help()
@@ -37,11 +37,11 @@ class SimpleResponse:
                 return "You are not allowed to use this command"
             else:
                 if split_command[0] == 'add':
-                    return self.add(split_command[1].partition(" ")[0], split_command[1].partition(" ")[2])
+                    return self.add(split_command[1].partition(" ")[0].lower(), split_command[1].partition(" ")[2])
                 if split_command[0] == 'delete':
-                    return self.delete(split_command[1])
+                    return self.delete(split_command[1].lower())
                 if split_command[0] == 'modify':
-                    return self.modify(split_command[1].partition(" ")[0], split_command[1].partition(" ")[2])
+                    return self.modify(split_command[1].partition(" ")[0].lower(), split_command[1].partition(" ")[2])
 
         return self.commands[split_command[0]].replace(':speaker', speaker)
 
