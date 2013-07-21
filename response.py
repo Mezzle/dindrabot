@@ -30,20 +30,20 @@ class SimpleResponse:
         split_command = [command.partition(" ")[0].lower(), command.partition(" ")[2]]
 
         if split_command[0] == 'help':
-            return self.help()
+            return self.help().encode('utf-8')
 
         if split_command[0] in self.built_ins:
             if not is_mod:
                 return "You are not allowed to use this command"
             else:
                 if split_command[0] == 'add':
-                    return self.add(split_command[1].partition(" ")[0].lower(), split_command[1].partition(" ")[2])
+                    return self.add(split_command[1].partition(" ")[0].lower(), split_command[1].partition(" ")[2]).encode('utf-8')
                 if split_command[0] == 'delete':
-                    return self.delete(split_command[1].lower())
+                    return self.delete(split_command[1].lower()).encode('utf-8')
                 if split_command[0] == 'modify':
-                    return self.modify(split_command[1].partition(" ")[0].lower(), split_command[1].partition(" ")[2])
+                    return self.modify(split_command[1].partition(" ")[0].lower(), split_command[1].partition(" ")[2]).encode('utf-8')
 
-        return self.commands[split_command[0]].replace(':speaker', speaker)
+        return self.commands[split_command[0]].replace(':speaker', speaker).encode('utf-8')
 
     def add(self, command, response):
         if command in self.commands:
