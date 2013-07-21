@@ -30,6 +30,7 @@ class DindraBot(irc.IRCClient):
             return
 
         if set:
-            if args not in self.mods:
-                self.mods.append(args)
-
+            for nick in args:
+                print '%s given op' % nick
+                if nick not in self.mods:
+                    self.mods.append(nick)
