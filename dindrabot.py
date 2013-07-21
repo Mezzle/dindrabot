@@ -17,7 +17,9 @@ class DindraBot(irc.IRCClient):
 
         msg = msg[1:]
 
-        is_mod = speaker.split('!')[0] in self.mods
+        speaker = speaker.split('!')[0]
+
+        is_mod = speaker in self.mods
 
         if self.response.has_response(msg):
             self.msg(channel, self.response.get_response(msg, speaker, is_mod))
