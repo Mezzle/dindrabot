@@ -5,7 +5,7 @@ import sys
 if __name__ == "__main__":
 
     channel = "#missyyakimo"
-    nickname = "Yakibot"
+    nickname = "yakibot"
 
     server = "missyyakimo.jtvirc.com"
     port = 6667
