@@ -4,10 +4,10 @@ import sys
 
 if __name__ == "__main__":
 
-    channel = "#dindraheart"
-    nickname = "DindraBot"
+    channel = "#missyyakimo"
+    nickname = "Yakibot"
 
-    server = "dindraheart.jtvirc.com"
+    server = "missyyakimo.jtvirc.com"
     port = 6667
     if len(sys.argv) > 1: channel = sys.argv[1]
     if len(sys.argv) > 2: nickname = sys.argv[2]
