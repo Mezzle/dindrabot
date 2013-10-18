@@ -7,7 +7,7 @@ if __name__ == "__main__":
     channel = "#dindraheart"
     nickname = "DindraBot"
 
-    server = "dindraheart.jtvirc.com"
+    server = "irc.twitch.tv"
     port = 6667
     if len(sys.argv) > 1: channel = sys.argv[1]
     if len(sys.argv) > 2: nickname = sys.argv[2]

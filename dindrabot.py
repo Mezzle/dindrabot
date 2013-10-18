@@ -6,6 +6,7 @@ class DindraBot(irc.IRCClient):
     mods = []
 
     def signedOn(self):
+        print "Connected"
         self.join(self.factory.channel)
 
     def privmsg(self, speaker, channel, msg):
